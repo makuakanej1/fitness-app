@@ -1,0 +1,31 @@
+.workout-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.workout-container form {
+    background: whitesmoke;
+    margin-top: 24px;
+    width: 50vw;
+    height: auto;
+    box-shadow: 5px 5px lightgray;
+}
+
+.workout-form form {
+    padding: 12px;
+    margin: 25px;
+}
+
+form h1 {
+    display: flex;
+    justify-content: center;
+}
+
+form label {
+    display: flex;
+}
+
+
+
+
