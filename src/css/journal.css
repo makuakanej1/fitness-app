@@ -1,6 +1,12 @@
+.journal-workouts {
+  display: grid;
+  column-gap: 12px;
+  grid-template-columns: auto auto auto auto;
+  padding: 24px;
+  background-color: rgba(198, 187, 187, 0.509);
+  height: 100vh;
+}
 
-
-
-
-
-
+.journal-workouts li {
+  list-style-type: none;
+}

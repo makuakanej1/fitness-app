@@ -1,76 +1,109 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../css/addworkout.css';
 import Hero from '../components/Hero';
+import Input from '../components/Input';
 
 const AddWorkout = () => {
-    const [namePreview, setNamePreview] = useState('');
-    const [volumePreview, setVolumePreview] = useState('');
-    const [exercisePreview, setExercisePreview] = useState('');
-    const [dayPreview, setDayPreview] = useState('');
+  const [name, setName] = useState('');
+  const [lift, setLifts] = useState('');
+  const [days, setDays] = useState('');
 
-   
-    const handleNameChange = (event) => {
-      setNamePreview(event.target.value);
-    }
+  const navigate = useNavigate();
 
-    const handleVolumeChange = (event) => {
-      setVolumePreview(event.target.value);
-    }
+  // event handlers for input fields
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
 
-    const handleExerciseChange = (event) => {
-      setExercisePreview(event.target.value);
-    }
+  const handleLiftChange = (event) => {
+    setLifts(event.target.value);
+  };
 
-    const handleDayChange = (event) => {
-      setDayPreview(event.target.value);
-    }
+  const handleDayChange = (event) => {
+    setDays(event.target.value);
+  };
 
+  // submit form to server
+  const submitForm = (e) => {
+    e.preventDefault();
+
+    const newWorkout = {
+      name,
+      lift,
+      days,
+    };
+
+    addWorkout(newWorkout);
+
+    return navigate('/journal');
+  };
+
+  // adds a new input field for additional exercises
+  const addExercise = () => {};
+
+  // add a new workout
+  const addWorkout = async (newWorkout) => {
+    const res = await fetch('http://localhost:5000/workouts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'applications/json',
+      },
+      body: JSON.stringify(newWorkout),
+    });
+  };
 
   return (
-    <div className="workout-container">
-      <div className="workout-header">
-        <Hero />
-      </div>
-      <div className="workout-form">
-       <form action="http://localhost:5000/workouts">
-        <h1 className='title'>Workout Form</h1>
-        
-        <label htmlFor="name-input">Workout Name </label>
-        <input type="text" value={namePreview} onChange={handleNameChange} />
-        
-        
-        <label htmlFor="">Sets x Reps </label>
-        <input type="text" value={volumePreview} onChange={handleVolumeChange} />
-        
+    <div className='workout-container'>
+      <div className='workout-body'>
+        <form onSubmit={submitForm}>
+          <div className='workout-inputs'>
+            <h1 className='title'>Workout Form</h1>
 
-        <label htmlFor="">Add Exercises </label>
-        <input type="text" value={exercisePreview} onChange={handleExerciseChange} />
-        
+            <label htmlFor='name'>Workout Name: </label>
+            <Input
+              type='text'
+              id='name'
+              value={name}
+              onChange={handleNameChange}
+            />
 
-        <label htmlFor="">Day of the week </label>
-        <select name="days" id="days-of-week" value={dayPreview} onChange={handleDayChange}>
-          <option value="">--Select a day of the week--</option>
-          <option value="Monday">Monday</option>
-          <option value="Tuesday">Tuesday</option>
-          <option value="Wednesday">Wednesday</option>
-          <option value="Thursday">Thursday</option>
-          <option value="Friday">Friday</option>
-          <option value="Saturday">Saturday</option>
-          <option value="Sunday">Sunday</option>
-        </select>
-        
-        <div className="workout-preview">
-          <h2>{namePreview}</h2>
-          <h2>{volumePreview} {exercisePreview}</h2>
-          <h2>{dayPreview}</h2>
-        </div>
+            <div id='full-workout'>
+              <label htmlFor='exercises'>Add full workout here: </label>
+              <aside>
+                <Input
+                  type='text'
+                  id='exercises'
+                  value={lift}
+                  onChange={handleLiftChange}
+                />
+                <button type='button'>+</button>
+              </aside>
+            </div>
 
-       </form>
-       
+            <label htmlFor='days'>Day of the week: </label>
+            <select
+              name='days'
+              id='days'
+              value={days}
+              onChange={handleDayChange}
+            >
+              <option value=''>--Select a day of the week--</option>
+              <option value='Monday'>Monday</option>
+              <option value='Tuesday'>Tuesday</option>
+              <option value='Wednesday'>Wednesday</option>
+              <option value='Thursday'>Thursday</option>
+              <option value='Friday'>Friday</option>
+              <option value='Saturday'>Saturday</option>
+              <option value='Sunday'>Sunday</option>
+            </select>
+
+            <button type='submit'>Submit Workout</button>
+          </div>
+        </form>
       </div>
     </div>
-    
-  )
-}
+  );
+};
 
-export default AddWorkout
+export default AddWorkout;

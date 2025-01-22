@@ -4,9 +4,9 @@ import Hero from '../components/Hero.jsx';
 const MainPage = () => {
   return (
     <>
-    <Hero />
+      <Hero />
     </>
-  )
-}
+  );
+};
 
-export default MainPage
+export default MainPage;

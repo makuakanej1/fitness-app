@@ -1,13 +1,3 @@
 {
-    "workouts": [
-        {
-            "id": "1",
-            "title": "Back/Bicep Workout",
-            "bodypart": "Back and Biceps",
-            "repsandsets": "3 sets for 12 reps"
-        },
-        {   
-
-        }
-    ]
+  "workouts": []
 }

@@ -1,31 +1,25 @@
-.workout-form {
-    display: flex;
-    justify-content: center;
-    margin-top: 12px;
-}
-
 .workout-container form {
-    background: whitesmoke;
-    margin-top: 24px;
-    width: 50vw;
-    height: auto;
-    box-shadow: 5px 5px lightgray;
+  background: whitesmoke;
+  margin-top: 24px;
+  width: fit-content;
+  height: auto;
+  box-shadow: 5px 5px lightgray;
+  padding: 24px;
 }
 
-.workout-form form {
-    padding: 12px;
-    margin: 25px;
+.workout-inputs {
+  display: flex;
+  flex-direction: column;
 }
 
-form h1 {
-    display: flex;
-    justify-content: center;
+.workout-body {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-form label {
-    display: flex;
+textarea {
+  min-height: 200px;
+  max-width: 200px;
+  color: blue;
 }
-
-
-
-

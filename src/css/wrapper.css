@@ -1,0 +1,12 @@
+.workout-wrapper {
+  text-align: center;
+  color: black;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  outline: solid 2px black;
+  padding: 12px;
+  max-width: 300px;
+  min-width: 300px;
+  max-height: 300px;
+  margin: 12px;
+}
