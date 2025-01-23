@@ -8,5 +8,6 @@
   max-width: 300px;
   min-width: 300px;
   max-height: 300px;
-  margin: 12px;
+  margin: auto;
+  margin-top: 24px;
 }

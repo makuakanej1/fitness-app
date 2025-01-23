@@ -23,3 +23,9 @@ textarea {
   max-width: 200px;
   color: blue;
 }
+
+#day,
+#month,
+#year {
+  width: 32px;
+}

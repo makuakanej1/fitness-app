@@ -5,19 +5,21 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from 'react-router-dom';
-import MainPage from './pages/MainPage';
 import Journal from './pages/Journal';
 import MainLayout from './layouts/MainLayout';
 import AddWorkout from './pages/AddWorkout';
+import EditWorkout from './pages/EditWorkout';
+import HomePage from './pages/HomePage';
 
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path='/' element={<MainLayout />}>
-        <Route index element={<MainPage />} />
-        <Route path='/mainpage' element={<MainPage />} />
+        <Route index element={<HomePage />} />
+        <Route path='/home' element={<HomePage />} />
         <Route path='/journal' element={<Journal />} />
         <Route path='/addworkout' element={<AddWorkout />} />
+        <Route path='/editworkout/:id' element={<EditWorkout />} />
       </Route>
     )
   );

@@ -1,12 +1,35 @@
 .journal-workouts {
   display: grid;
-  column-gap: 12px;
-  grid-template-columns: auto auto auto auto;
+  justify-content: center;
+  column-gap: 80px;
+  grid-template-columns: auto auto auto;
   padding: 24px;
   background-color: rgba(198, 187, 187, 0.509);
   height: 100vh;
+  width: auto;
 }
 
 .journal-workouts li {
   list-style-type: none;
+}
+
+.journal-header {
+  background-color: black;
+  color: whitesmoke;
+  text-align: center;
+}
+
+a {
+  list-style-type: none;
+  list-style: none;
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: aqua;
+}
+
+.edit-button {
+  margin-left: 12px;
 }

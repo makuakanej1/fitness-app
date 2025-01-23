@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import '../css/journal.css';
-import Hero from '../components/Hero';
 import WorkoutWrapper from '../components/WorkoutWrapper';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const Journal = () => {
   const [workouts, setWorkouts] = useState([]);
+  const { id } = useParams();
+
+  const navigate = useNavigate();
 
   // get data from json server for workouts
   useEffect(() => {
@@ -30,24 +33,38 @@ const Journal = () => {
     window.location.reload();
   };
 
+  // edit a workout
+  const editWorkout = async (id) => {
+    navigate(`/editworkout/${id}`);
+    console.log('edited', id);
+  };
+
   return (
     <div className='journal-container'>
       <div className='journal-header'>
-        <Hero
-          title='Welcome to your workout planner!'
-          subtitle='Add, remove, or modify workouts here'
-        />
+        <h1>Welcome to your workout journal!</h1>
+        <h3>All workouts your have created will show here.</h3>
       </div>
       <div className='journal-workouts'>
         {workouts.map((workout) => (
           <ul key={workout.id}>
             <WorkoutWrapper>
-              <h3>Workout Name: </h3>
-              <li>{workout.name}</li>
-              <h3>Workout: </h3>
-              <li>{workout.lift}</li>
-              <h3>Day of the week:</h3>
-              <li>{workout.days}</li>
+              <h3
+                style={{
+                  backgroundColor: 'black',
+                  borderRadius: '8px',
+                  color: 'whitesmoke',
+                }}
+              >
+                Workout Name: <li>{workout.name}</li>
+              </h3>
+
+              <h3>Exercises: </h3>
+              <li>{workout.exercise}</li>
+              <h3>Date:</h3>
+              <li>
+                {workout.day}/{workout.month}/{workout.year}
+              </li>
               <button
                 onClick={() => {
                   deleteWorkout(workout.id);
@@ -56,6 +73,8 @@ const Journal = () => {
                 Delete Workout
               </button>
               <button
+                type='button'
+                id='edit-button'
                 onClick={() => {
                   editWorkout(workout.id);
                 }}

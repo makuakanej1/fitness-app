@@ -1,0 +1,20 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  background: whitesmoke;
+  margin-top: 24px;
+  width: 25vw;
+  min-height: 70vh;
+  height: auto;
+  box-shadow: 5px 5px lightgray;
+  padding: 24px;
+  text-align: center;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+}

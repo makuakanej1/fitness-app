@@ -1,3 +1,28 @@
 {
-  "workouts": []
+  "workouts": [
+    {
+      "id": "5141",
+      "name": "Olivia",
+      "exercise": "",
+      "day": "",
+      "month": "",
+      "year": ""
+    },
+    {
+      "id": "b3cb",
+      "name": "",
+      "exercise": "",
+      "day": "",
+      "month": "",
+      "year": ""
+    },
+    {
+      "id": "cc9a",
+      "name": "",
+      "exercise": "",
+      "day": "",
+      "month": "",
+      "year": ""
+    }
+  ]
 }
