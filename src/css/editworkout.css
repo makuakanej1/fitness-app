@@ -1,9 +1,14 @@
 .form-container {
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   background: whitesmoke;
   margin-top: 24px;
   width: 25vw;
@@ -11,10 +16,4 @@ form {
   height: auto;
   box-shadow: 5px 5px lightgray;
   padding: 24px;
-  text-align: center;
-}
-
-.form-container {
-  display: flex;
-  justify-content: center;
 }

@@ -4,32 +4,38 @@
   column-gap: 80px;
   grid-template-columns: auto auto auto;
   padding: 24px;
-  background-color: rgba(198, 187, 187, 0.509);
+  background-color: #1e1c1c;
   height: 100vh;
   width: auto;
-}
-
-.journal-workouts li {
-  list-style-type: none;
 }
 
 .journal-header {
   background-color: black;
   color: whitesmoke;
   text-align: center;
+  padding: 24px;
 }
 
-a {
+li {
   list-style-type: none;
-  list-style: none;
-  text-decoration: none;
-  color: white;
 }
 
-a:hover {
-  color: aqua;
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1e1c1c;
+  gap: 12px;
+  height: 80px;
 }
 
-.edit-button {
+.search-input {
+  width: 15vw;
+  height: 4vh;
+  border-radius: 12px;
+  text-align: center;
+}
+
+#edit-button {
   margin-left: 12px;
 }

@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import '../css/addworkout.css';
 
 const AddWorkout = () => {
   const [name, setName] = useState('');
-  const [exercise, setExercises] = useState('');
-  const [day, setDay] = useState('');
-  const [month, setMonth] = useState('');
-  const [year, setYear] = useState('');
+  const [exercises, setExercises] = useState([]);
+  const [date, setDate] = useState('');
 
   const navigate = useNavigate();
 
@@ -17,10 +15,8 @@ const AddWorkout = () => {
 
     const newWorkout = {
       name,
-      exercise,
-      day,
-      month,
-      year,
+      exercises,
+      date,
     };
 
     addWorkout(newWorkout);
@@ -41,65 +37,40 @@ const AddWorkout = () => {
 
   return (
     <div className='workout-container'>
-      <div className='workout-body'>
-        <form onSubmit={submitForm}>
-          <div className='workout-inputs'>
-            <h1 className='title'>Workout Form</h1>
+      <form onSubmit={submitForm}>
+        <h1 className='title'>Workout Form</h1>
 
-            <label htmlFor='name'>Workout Name: </label>
-            <input
-              type='text'
-              id='name'
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
+        <label htmlFor='name'>Workout Name: </label>
+        <input
+          type='text'
+          id='name'
+          placeholder='Workout Name'
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
 
-            <div id='full-workout'>
-              <label htmlFor='exercises'>Add full workout here: </label>
-              <aside>
-                <input
-                  type='text'
-                  id='exercises'
-                  value={exercise}
-                  onChange={(e) => setExercises(e.target.value)}
-                />
-                <button type='button'>add exercise</button>
-              </aside>
-            </div>
+        <label htmlFor='exercises'>Add full workout here: </label>
+        <textarea
+          name='exercises'
+          id='exercises'
+          rows='10'
+          placeholder='Enter Workout Here...'
+          value={exercises}
+          onChange={(e) => setExercises(e.target.value)}
+        ></textarea>
 
-            <input
-              type='text'
-              id='day'
-              value={day}
-              onChange={(e) => setDay(e.target.value)}
-              placeholder='day'
-            />
-            <input
-              type='text'
-              id='month'
-              value={month}
-              onChange={(e) => setMonth(e.target.value)}
-              placeholder='month'
-            />
-            <input
-              type='text'
-              id='year'
-              value={year}
-              onChange={(e) => setYear(e.target.value)}
-              placeholder='year'
-            />
+        <input
+          type='date'
+          id='date'
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+          placeholder='date'
+          required
+        />
 
-            <button
-              type='submit'
-              onClick={() => {
-                navigate('/journal');
-              }}
-            >
-              Submit Workout
-            </button>
-          </div>
-        </form>
-      </div>
+        <button>Submit Workout</button>
+      </form>
     </div>
   );
 };

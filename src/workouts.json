@@ -1,28 +1,24 @@
 {
   "workouts": [
     {
-      "id": "5141",
+      "id": "7721",
+      "name": "asd",
+      "exercises": "",
+      "date": ""
+    },
+    {
+      "id": "437e",
       "name": "Olivia",
-      "exercise": "",
-      "day": "",
-      "month": "",
-      "year": ""
+      "exercises": [
+        "test1"
+      ],
+      "date": "2025-01-26"
     },
     {
-      "id": "b3cb",
-      "name": "",
-      "exercise": "",
-      "day": "",
-      "month": "",
-      "year": ""
-    },
-    {
-      "id": "cc9a",
-      "name": "",
-      "exercise": "",
-      "day": "",
-      "month": "",
-      "year": ""
+      "id": "640c",
+      "name": "Olivia",
+      "exercises": "3 sets x 12 reps - Bench Press",
+      "date": "2025-01-26"
     }
   ]
 }

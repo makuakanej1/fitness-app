@@ -1,13 +1,31 @@
 .workout-wrapper {
   text-align: center;
-  color: black;
+  color: #1e1c1c;
   background-color: whitesmoke;
   border-radius: 20px;
-  outline: solid 2px black;
+  outline: solid 2px #1e1c1c;
   padding: 12px;
   max-width: 300px;
   min-width: 300px;
-  max-height: 300px;
+  max-height: auto;
   margin: auto;
   margin-top: 24px;
+  box-shadow: 5px 5px whitesmoke;
+  font-weight: 600;
+}
+
+h2 {
+  background-color: #1e1c1c;
+  color: whitesmoke;
+  font-size: 18px;
+  padding: 4px;
+  border-radius: 12px;
+}
+
+button {
+  background-color: #1e1c1c;
+  color: whitesmoke;
+  border-radius: 6px;
+  padding: 6px;
+  font-size: small;
 }
