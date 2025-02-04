@@ -1,4 +1,4 @@
-<h1>Fitness App Project</h1>
+<h1>Fitness App Project (Personal Capstone)</h1>
 
 <h2>The original idea was to create a simple workout planner that could be used to schedule workouts.</h2>
 
