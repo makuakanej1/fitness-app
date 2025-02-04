@@ -25,9 +25,9 @@
 - I got more practice with using async/await functions
 - Learned and use some of the HTTP methods to store (POST), edit (PUT), and delete (DELETE) data in my mock API
 - Deepened my knowledge of how to use higher-order array methods such as .map (in order to render my data to the page) and .filter (in order to get my filter search input working and have it look for whatever is inputted)
-  ** My input for exercises is just a text area - I spent way too long on this portion of the project due to not being able to figure out how to either display each workout on its own line in the journal page or how to create a new "exercise" input that generated its' own unique ID and storing it/displaying it separately **
-  - I got to implement some NavLink functionality to show which page you are currently on within the NavBar
-  - I also got to use the navigate functionality in order to move to and from a page after finishing a particular purpose
+  ** My input for exercises is just a text area - I spent way too long on this portion of the project due to not being able to figure out how to either display each workout on its own line in the journal page or how to create a new "exercise" input that generated its' own   unique ID and storing it/displaying it separately **
+- I got to implement some NavLink functionality to show which page you are currently on within the NavBar
+- I also got to use the navigate functionality in order to move to and from a page after finishing a particular purpose
 
 
   
