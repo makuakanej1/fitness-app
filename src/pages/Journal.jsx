@@ -47,6 +47,11 @@ const Journal = () => {
     JSON.stringify(workout).toLowerCase().includes(search.toLowerCase())
   );
 
+  // sort workouts by earliest date
+  const sortedWorkouts = filterWorkouts.sort((a, b) =>
+    a.date > b.date ? 1 : -1
+  );
+
   return (
     <div className='journal-container'>
       <div className='journal-header'>
@@ -63,7 +68,7 @@ const Journal = () => {
         />
       </div>
       <div className='journal-workouts'>
-        {filterWorkouts.map((workout) => (
+        {sortedWorkouts.map((workout) => (
           <WorkoutWrapper key={workout.id}>
             <h2>Workout Name: {workout.name}</h2>
             <h3>Exercises: </h3>
