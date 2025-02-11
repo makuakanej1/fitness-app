@@ -4,7 +4,7 @@ import '../css/addworkout.css';
 
 const AddWorkout = () => {
   const [name, setName] = useState('');
-  const [exercises, setExercises] = useState([]);
+  const [exercises, setExercises] = useState(['']);
   const [date, setDate] = useState('');
 
   const navigate = useNavigate();
@@ -35,6 +35,20 @@ const AddWorkout = () => {
     });
   };
 
+  // add to button to create a new input for another exercise
+  const addExerciseInput = () => {
+    e.preventDefault();
+
+    setExercises([...exercises, '']);
+  };
+
+  //
+  const newExerciseInput = (index, e) => {
+    const newExercises = [...exercises];
+    newExercises[index] = e.target.value;
+    setExercises(newExercises);
+  };
+
   return (
     <div className='workout-container'>
       <form onSubmit={submitForm}>
@@ -50,15 +64,18 @@ const AddWorkout = () => {
           required
         />
 
-        <label htmlFor='exercises'>Add full workout here: </label>
-        <textarea
-          name='exercises'
-          id='exercises'
-          rows='10'
-          placeholder='Enter Workout Here...'
-          value={exercises}
-          onChange={(e) => setExercises(e.target.value)}
-        ></textarea>
+        {exercises.map((value, index) => (
+          <input
+            key={index}
+            value={value}
+            type='text'
+            placeholder={`Exercise #${index + 1}`}
+            onChange={(e) => newExerciseInput(index, e)}
+          />
+        ))}
+        <button id='exercise-btn' type='button' onClick={addExerciseInput}>
+          Add Exercise
+        </button>
 
         <input
           type='date'

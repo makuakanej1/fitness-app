@@ -48,8 +48,8 @@ const Journal = () => {
   );
 
   // sort workouts by earliest date
-  const sortedWorkouts = filterWorkouts.sort((a, b) =>
-    a.date > b.date ? 1 : -1
+  const sortedWorkouts = filterWorkouts.sort((first, second) =>
+    first.date > second.date ? 1 : -1
   );
 
   return (
@@ -72,7 +72,9 @@ const Journal = () => {
           <WorkoutWrapper key={workout.id}>
             <h2>Workout Name: {workout.name}</h2>
             <h3>Exercises: </h3>
-            <p>{workout.exercises}</p>
+            {workout.exercises.map((exercises, index) => {
+              return <li key={index}>{exercises}</li>;
+            })}
             <h3>Date:</h3>
             <p>{workout.date}</p>
             <button

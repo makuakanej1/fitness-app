@@ -1,40 +1,32 @@
 {
   "workouts": [
     {
-      "id": "7721",
+      "id": "0b7f",
       "name": "Chest",
-      "exercises": "Incline Dumbbell Press: 2x8-10\nIncline Dumbbell Fly: 2x8-10\nHammer Strength Machine Incline Press (Drop Set): 2x6-10\nPec Deck: 3x15\nEZ Bar Skull Crushers: 2x8-10\nPushups: 2xFailure",
-      "date": "2025-02-11"
-    },
-    {
-      "id": "a4a1",
-      "name": "Back",
-      "exercises": "Close Grip Underhand Lat Pulldown: 3x10-12\nChest Supported Dumbbell Row: 2x8-10\nChest Supported T-Bar Row (Drop Set): 2x8-10\nMachine Chest Supported Row: 2x10-12\nCable Lat Extension: 2x10-12\nMachine Preacher Curls: 2x10-12",
-      "date": "2025-02-12"
-    },
-    {
-      "id": "eca3",
-      "name": "Shoulders and Chest",
-      "exercises": "Seated Dumbbell Shoulder Press: 2x6-10\nMachine Shoulder Press (Drop Set): 3x6-10\nSeated Dumbbell Lateral Raise (Drop Set): 2x8-10\nMachine Lateral Raise: 2x10-12\nSuperset\n- Reverse Pec Deck: 2x10-12\n- Machine Fly: 2x10-12",
-      "date": "2025-02-13"
-    },
-    {
-      "id": "6ea4",
-      "name": "Quad and Calves",
-      "exercises": "Leg Extension (Drop Set): 2x20\nSmith Machine Squat: 2x6-10\nLeg Tri Set\n-Unilateral Leg Press: 3x8-10\n- Sissy Squat: 3x12-15\n- Seated Calf Raise: 3x10-12",
+      "exercises": [
+        "3 sets x 12 reps - SkullCrushers",
+        "3 sets x 12 reps - Pull ups",
+        "asd"
+      ],
       "date": "2025-02-10"
     },
     {
-      "id": "6d3d",
-      "name": "Hamstring and Back",
-      "exercises": "Lying Leg Curl: 2x8-10\nDeadlift: 2x4-8\nSeated Leg Curl: 2x8-10\nStanding Leg Curl: 2x8-10\nWide Grip Lat Pulldowns: 3x8-10\nCable Lat Extension: 2x10-12",
-      "date": "2025-02-14"
+      "id": "b562",
+      "name": "Chest and Triceps",
+      "exercises": ["test1", "test2", "test3"],
+      "date": "2025-02-10"
     },
     {
-      "id": "0203",
-      "name": "Arms",
-      "exercises": "Rope Cable Triceps Pressdown (Drop Set): 2x8-10\nIncline Dumbbell Skull Crusher: 2x8-10\nEZ Bar Preacher Curl (Drop Set): 3x8-10\nDumbbell Curl: 2x10-12\nCable Cross Body Triceps: 2x10-15\nLow Pulley Cable Curl With V-Bar Handle (Drop Set): 2x10-12",
-      "date": "2025-02-15"
+      "id": "3410",
+      "name": "Chest and Triceps",
+      "exercises": [
+        "3 sets x 12 reps - Bench Press",
+        "3 sets x 12 reps - Incline Press",
+        "3 sets x 12 reps - Decline Press",
+        "3 sets x 12 reps - SkullCrushers",
+        "3 sets x 12 reps - Rope Extensions"
+      ],
+      "date": "2025-02-10"
     }
   ]
 }
