@@ -35,7 +35,11 @@ const AddEditPage = () => {
       date,
     };
 
-    addWorkout(newWorkout);
+    if (id) {
+      editWorkout(newWorkout);
+    } else {
+      addWorkout(newWorkout);
+    }
 
     return navigate('/journal');
   };
@@ -45,7 +49,18 @@ const AddEditPage = () => {
     const res = await fetch('http://localhost:5000/workouts', {
       method: 'POST',
       headers: {
-        'Content-Type': 'applications/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newWorkout),
+    });
+  };
+
+  // edit an exisiting workout
+  const editWorkout = async (newWorkout) => {
+    const res = await fetch(`http://localhost:5000/workouts/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(newWorkout),
     });
@@ -58,11 +73,14 @@ const AddEditPage = () => {
     setExercises([...exercises, '']);
   };
 
-  //
   const newExerciseInput = (index, e) => {
     const newExercises = [...exercises];
     newExercises[index] = e.target.value;
     setExercises(newExercises);
+  };
+
+  const deleteExercise = (index, e) => {
+    setExercises(...exercises);
   };
 
   return (
@@ -81,14 +99,17 @@ const AddEditPage = () => {
         />
 
         {exercises.map((value, index) => (
-          <input
-            key={index}
-            value={value}
-            type='text'
-            placeholder={`Exercise #${index + 1}`}
-            onChange={(e) => newExerciseInput(index, e)}
-          />
+          <>
+            <input
+              key={index}
+              value={value}
+              type='text'
+              placeholder={`Exercise #${index + 1}`}
+              onChange={(e) => newExerciseInput(index, e)}
+            />
+          </>
         ))}
+
         <button id='exercise-btn' type='button' onClick={addExerciseInput}>
           Add Exercise
         </button>
@@ -102,7 +123,7 @@ const AddEditPage = () => {
           required
         />
 
-        <button>Submit Workout</button>
+        <button>{id ? 'Update Workout' : 'Submit Workout'}</button>
       </form>
     </div>
   );

@@ -14,24 +14,26 @@ form {
   flex-direction: column;
   align-items: center;
   background-color: whitesmoke;
+  max-height: 100vh;
   gap: 12px;
+  padding: 100px;
+  border-radius: 6px;
+  margin-top: 50px;
 }
 
 input {
   text-align: center;
+  height: 30px;
+  width: fit-content;
+  border-radius: 6px;
 }
 
 label {
   font-size: large;
   font-weight: bold;
-}
-
-textarea::placeholder {
-  text-align: center;
-}
-
-textarea {
-  width: 15vw;
+  border: solid 2px black;
+  padding: 12px;
+  border-radius: 6px;
 }
 
 #day,
@@ -40,6 +42,9 @@ textarea {
   width: 32px;
 }
 
-#exercise-btn {
-  margin-left: 12px;
+.title {
+  margin-bottom: 30px;
+  border: solid 2px black;
+  border-radius: 6px;
+  padding: 12px;
 }
