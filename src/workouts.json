@@ -1,19 +1,13 @@
 {
   "workouts": [
     {
-      "id": "0b7f",
-      "name": "Chest",
-      "exercises": [
-        "3 sets x 12 reps - SkullCrushers",
-        "3 sets x 12 reps - Pull ups",
-        "asd"
-      ],
-      "date": "2025-02-10"
-    },
-    {
       "id": "b562",
       "name": "Chest and Triceps",
-      "exercises": ["test1", "test2", "test3"],
+      "exercises": [
+        "test1",
+        "test2",
+        "test3"
+      ],
       "date": "2025-02-10"
     },
     {
@@ -25,6 +19,50 @@
         "3 sets x 12 reps - Decline Press",
         "3 sets x 12 reps - SkullCrushers",
         "3 sets x 12 reps - Rope Extensions"
+      ],
+      "date": "2025-02-10"
+    },
+    {
+      "id": "e39f",
+      "name": "Chest and Triceps",
+      "exercises": [
+        "3 sets x 12 reps - Bench Press",
+        "3 sets x 12 reps - Incline Press",
+        "3 sets x 12 reps - Decline Press",
+        "3 sets x 12 reps - SkullCrushers",
+        "3 sets x 12 reps - Rope Extensions"
+      ],
+      "date": "2025-02-10"
+    },
+    {
+      "id": "2e96",
+      "name": "Chest",
+      "exercises": [
+        "3 sets x 12 reps - SkullCrushers",
+        "3 sets x 12 reps - Pull ups",
+        "asd"
+      ],
+      "date": "2025-02-10"
+    },
+    {
+      "id": "53a1",
+      "name": "Chest",
+      "exercises": [
+        "3 sets x 12 reps - SkullCrushers",
+        "3 sets x 12 reps - Pull ups",
+        "asd"
+      ],
+      "date": "2025-02-10"
+    },
+    {
+      "id": "88ec",
+      "name": "Chest",
+      "exercises": [
+        "3 sets x 12 reps - SkullCrushers",
+        "3 sets x 12 reps - Pull ups",
+        "asd",
+        "asdasd",
+        "asdasd"
       ],
       "date": "2025-02-10"
     }

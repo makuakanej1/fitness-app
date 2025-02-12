@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import '../css/journal.css';
 import WorkoutWrapper from '../components/WorkoutWrapper';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const Journal = () => {
   const [workouts, setWorkouts] = useState([]);
   const [search, setSearch] = useState('');
 
   const navigate = useNavigate();
+  const { id } = useParams();
 
   // get data from json server for workouts
   useEffect(() => {
@@ -39,7 +40,7 @@ const Journal = () => {
 
   // edit a workout
   const editWorkout = async (id) => {
-    navigate(`/editworkout/${id}`);
+    navigate(`/addedit/${id}`);
   };
 
   // filter through workouts by name

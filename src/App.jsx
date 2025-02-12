@@ -7,8 +7,7 @@ import {
 } from 'react-router-dom';
 import Journal from './pages/Journal';
 import MainLayout from './layouts/MainLayout';
-import AddWorkout from './pages/AddWorkout';
-import EditWorkout from './pages/EditWorkout';
+import AddEditPage from './pages/AddEditPage';
 
 const App = () => {
   const router = createBrowserRouter(
@@ -16,8 +15,8 @@ const App = () => {
       <Route path='/' element={<MainLayout />}>
         <Route index element={<Journal />} />
         <Route path='/journal' element={<Journal />} />
-        <Route path='/addworkout' element={<AddWorkout />} />
-        <Route path='/editworkout/:id' element={<EditWorkout />} />
+        <Route path='/addedit' element={<AddEditPage />} />
+        <Route path='/addedit/:id' element={<AddEditPage />} />
       </Route>
     )
   );

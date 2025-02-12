@@ -1,13 +1,29 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import '../css/addworkout.css';
 
-const AddWorkout = () => {
+const AddEditPage = () => {
   const [name, setName] = useState('');
   const [exercises, setExercises] = useState(['']);
   const [date, setDate] = useState('');
 
   const navigate = useNavigate();
+  const { id } = useParams();
+
+  // checks if an id is present - if its true then it will fetch/set the data from json into the fields
+  useEffect(() => {
+    if (id) {
+      const fetchWorkouts = async () => {
+        const res = await fetch(`http://localhost:5000/workouts/${id}`);
+        const data = await res.json();
+        setName(data.name);
+        setExercises(data.exercises);
+        setDate(data.date);
+      };
+
+      fetchWorkouts();
+    }
+  }, [id]);
 
   // submit form to server
   const submitForm = (e) => {
@@ -36,7 +52,7 @@ const AddWorkout = () => {
   };
 
   // add to button to create a new input for another exercise
-  const addExerciseInput = () => {
+  const addExerciseInput = (e) => {
     e.preventDefault();
 
     setExercises([...exercises, '']);
@@ -92,4 +108,4 @@ const AddWorkout = () => {
   );
 };
 
-export default AddWorkout;
+export default AddEditPage;
